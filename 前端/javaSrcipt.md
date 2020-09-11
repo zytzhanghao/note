@@ -1,5 +1,3 @@
-
-
 <h1>javaSrcipt</h1>
 
 ## 条件语句
@@ -33,7 +31,7 @@ switch (expression) {
   case choice2:
     run this code instead
     break;
-    
+  
   // include as many cases as you like
 
   default:
@@ -102,27 +100,22 @@ callbacks 异步函数
 
 api可以做什么
 
-1、 操作文档的api https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
-
-2、从服务器获取数据的Api https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
-
-3、用于绘制图形的api  <canvas>
-
-4、音频和视频的api
+1. 操作文档的api https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+2. 从服务器获取数据的Api https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
+3. 用于绘制图形的api  <canvas>
+4. 音频和视频的api
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API
 
 https://developer.mozilla.org/zh-CN/docs/MDN/Doc_status/API/WebRTC
 
-5、操作设备的api
+5. 操作设备的api
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Notifications_API
 
-6、客户端储存的api
+6. 客户端储存的api
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API
-
-
 
 api的可识别入口
 
@@ -145,15 +138,15 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 
 ## proxy and reflect
 
-### in关键词 
+### in关键词
 
-  let arr = [1, 2, 34, 5]
+let arr = [1, 2, 34, 5]
 
-   let obe = { name: "zyt" }
+let obe = { name: "zyt" }
 
-   console.log(3 in arr) //true
+console.log(3 in arr) //true
 
-   console.log('name' in obe)//true
+console.log('name' in obe)//true
 
 ## moudule 模块化
 
@@ -161,12 +154,13 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 
 ## let 和const
 
-|                             let                             |          var           |
-| :---------------------------------------------------------: | :--------------------: |
-|                    只在声明代码块内有效                     |        全局有效        |
-| 不存在变量提升（即变量可以在声明之前使用，值为`undefined`） |      存在变量提升      |
-|                         暂时性死区                          |      无暂时性死区      |
-|       `let`不允许在相同作用域内，重复声明同一个变量。       | 允许重复声明同一个变量 |
+
+| let | var |
+| :-: | :-: |
+| 只在声明代码块内有效 | 全局有效 |
+| 不存在变量提升（即变量可以在声明之前使用，值为`undefined`） | 存在变量提升 |
+| 暂时性死区 | 无暂时性死区 |
+| `let`不允许在相同作用域内，重复声明同一个变量。 | 允许重复声明同一个变量 |
 
 ```javascript
 //变量提升
@@ -212,7 +206,7 @@ function
 
 ## 解构赋值
 
-###	数组解构赋值
+### 数组解构赋值
 
 ```javas
 //例
@@ -294,7 +288,9 @@ JavaScript 共有 6 种方法可以表示一个字符。
 '\u{7A}' === 'z' // true
 ```
 
-​	iterator
+```
+iterator
+```
 
 ```javascript
  for (const iterator of 'object') {
@@ -313,10 +309,11 @@ template string
 
 ## String Function
 
+
 | es5           formCharCode | es6          fromCodePoint |
-| -------------------------- | -------------------------- |
-| 不能识别大于0xffff码点     | 可以大于                   |
-|                            |                            |
+| - | - |
+| 不能识别大于0xffff码点 | 可以大于 |
+|   |   |
 
 `fromCodePoint`方法定义在`String`对象上，而`codePointAt`方法定义在字符串的实例对象上。
 
@@ -400,3 +397,29 @@ Math.imul()
 (0x7fffffff * 0x7fffffff)|0 // 0
 Math.imul(0x7fffffff, 0x7fffffff) // 1
 ```
+
+## 数组的扩展~~~~
+
+## Array.from()
+
+`Array.from`方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。
+
+下面是一个类似数组的对象，`Array.from`将它转为真正的数组。
+
+只能将类似数组对象转换
+
+## for
+
+* for
+* forerch
+* for in~~~~
+* for of
+
+## set
+
+
+| set | WeakSet |
+| - | - |
+|   | WeakSet成员只能是对象 |
+|   | WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。 |
+|   | WeakSet 不能遍历，因为是弱引用，不能保证每个成员存在 |
