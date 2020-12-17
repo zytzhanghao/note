@@ -1,4 +1,4 @@
-（1）promise 理解
+## （1）promise 理解
 
 promise 是js解决异步提出的一种方案。
 
@@ -12,7 +12,7 @@ pending(进行中)、fulfilled(已完成)和rejected(已失败)
 
 一旦改变，就不会再变，任何时候都可以得到这个结果
 
-（2）箭头函数和普通函数的区别 
+## （2）箭头函数和普通函数的区别 
 
 上下文
 
@@ -30,11 +30,11 @@ https://www.cnblogs.com/echolun/p/11438363.html
 
 （3）箭头函数没有原生属性（prototype)
 
-(3)ES6新特性 
+##   (3)ES6新特性 
 
 阮一峰：https://es6.ruanyifeng.com/
 
-（4） Var let const 的区别 
+## （4） Var let const 的区别 
 
 1、var只有全局作用域和函数作用域，let和const有块的作用域概念
 
@@ -46,7 +46,7 @@ https://www.cnblogs.com/echolun/p/11438363.html
 
 https://www.cnblogs.com/humin/p/4556820.html
 
-（5）类的继承几种方式
+## （5）类的继承几种方式
 
 | 名称                  | 例子                                                         | 优势                                                         | 缺陷                                                         |
 | --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -55,7 +55,7 @@ https://www.cnblogs.com/humin/p/4556820.html
 | Object.setPrototypeOf | ` function foo(){} foo.prototype = {  foo_prop: "foo val" }; function bar(){} var proto = {  bar_prop: "bar val" }; Object.setPrototypeOf(  proto, foo.prototype ); bar.prototype = proto; var inst = new bar; console.log(inst.foo_prop); console.log(inst.bar_prop); `` function foo(){} foo.prototype = {  foo_prop: "foo val" }; function bar(){} var proto; proto=Object.setPrototypeOf(  { bar_prop: "bar val" },  foo.prototype ); bar.prototype = proto; var inst = new bar; console.log(inst.foo_prop); console.log(inst.bar_prop)` | 支持所有现代浏览器和微软IE9+浏览器。允许动态操作对象的原型，甚至能强制给通过 `Object.create(null) `创建出来的没有原型的对象添加一个原型。 | 这个方式表现并不好，应该被弃用。如果你在生产环境中使用这个方法，那么快速运行 Javascript 就是不可能的，因为许多浏览器优化了原型，尝试在调用实例之前猜测方法在内存中的位置，但是动态设置原型干扰了所有的优化，甚至可能使浏览器为了运行成功，使用完全未经优化的代码进行重编译。 不支持 IE8 及以下的浏览器版本。 |
 | __proto__             | ` function foo(){} foo.prototype = {  foo_prop: "foo val" }; function bar(){} var proto = {  bar_prop: "bar val",  __proto__: foo.prototype }; bar.prototype = proto; var inst = new bar; console.log(inst.foo_prop); console.log(inst.bar_prop); `` var inst = {  __proto__: {    bar_prop: "bar val",    __proto__: {      foo_prop: "foo val",      __proto__: Object.prototype    }  } }; console.log(inst.foo_prop); console.log(inst.bar_prop)` | 支持所有现代非微软版本以及 IE11 以上版本的浏览器。将 `__proto__` 设置为非对象的值会静默失败，并不会抛出错误。 | 应该完全将其抛弃因为这个行为完全不具备性能可言。 如果你在生产环境中使用这个方法，那么快速运行 Javascript 就是不可能的，因为许多浏览器优化了原型，尝试在调用实例之前猜测方法在内存中的位置，但是动态设置原型干扰了所有的优化，甚至可能使浏览器为了运行成功，使用完全未经优化的代码进行重编译。不支持 IE10 及以下的浏览器版本。 |
 
-(6). Null 和 undefined 的区别 
+## (6). Null 和 undefined 的区别 
 
 相同：都会被if判断false
 
@@ -79,7 +79,7 @@ undefined:表示缺少值，此处该有值但还未被定义。
 
 4、对象没有赋值的属性为undefined
 
-(7) Call bind apply的区别 
+## (7) Call bind apply的区别 
 
 https://www.cnblogs.com/cosiray/p/4512969.html
 
@@ -89,7 +89,7 @@ this.obj.getX.call(dataObj,arg1,arg2)
 
 this.obj.getX.bind(dataOb)(arg1,arg2)
 
-(8) [前端]()缓存的理解 或者 [前端]()数据持久化的理解 
+## (8) [前端]()缓存的理解 或者 [前端]()数据持久化的理解 
 
 https://juejin.cn/post/6844903561894035463#heading-18
 
@@ -211,14 +211,13 @@ Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？
 1. `Cache-Control: max-age=1000`的缓存 是直接不发请求的，1000秒内相同URL的用户请求资源的时候，不会再去发请求访问服务器了，直接从本地内存的缓存里面获取
 2. `ETag`的缓存是不管怎么样都要发起请求，第二次访问的是时候会多一个请求头`If-None-Match : md5值`，如果两次请求之间的MD5值相同就不会去下载新的文件，响应体是第一次下载的；如果MD5值变了，就要去下载新的文件。
 
-
-（9）防抖和节流 
+## （9）防抖和节流 
 
 https://www.jianshu.com/p/c8b86b09daf0
 
 vue 防抖节流未掌握，原因不明，dome不出来
 
-（10）闭包 
+## （10）闭包 
 
 https://blog.csdn.net/weixin_43586120/article/details/89456183
 
@@ -281,7 +280,7 @@ console.log(Counter.value()); /* logs 1 */
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
 
-（11）数组去重 
+## （11）数组去重 
 
 俩种思路
 
@@ -292,7 +291,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
 
 https://segmentfault.com/a/1190000016418021
 
-12、深度拷贝
+## 12、深度拷贝
 
 浅拷贝，深拷贝区别，有没有分配新的内存
 
@@ -304,7 +303,7 @@ https://segmentfault.com/a/1190000016418021
 
 4、JSON.parse(JSON.stringify(array))
 
-13、原型链
+## 13、原型链
 
 什么是原型链：
 
@@ -338,7 +337,7 @@ https://www.cnblogs.com/xfcao/p/10029731.html
 
 原型对象prototype里面有一个constructor属性，该属性指向原型对象所属的构造函数
 
-14、require和import
+## 14、require和import
 
 https://www.jianshu.com/p/f1e54dde30c8
 
